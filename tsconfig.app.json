@@ -4,7 +4,7 @@
     "baseUrl": "./src",
     "paths": {
       "@components/*": ["components/*"],
-      "@apptypes/*": ["types/*"],
+      "@lib/*": ["lib/*"],
       "@styles/*": ["styles/*"]
     },
 

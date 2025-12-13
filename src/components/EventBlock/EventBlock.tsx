@@ -1,12 +1,13 @@
-import type { CalendarEvent } from "../types/Event";
+import type { ICalendarEvent } from "@lib/types";
+import './eventBlock.css'
 
-interface EventBlockProps {
-  event: CalendarEvent;
-  ppm: number;        // pixels per minute
+interface IEventBlockProps {
+  event: ICalendarEvent;
+  ppm: number;
   maxColumns: number;
 }
 
-function EventBlock({ event, ppm, maxColumns }: EventBlockProps) {
+export const EventBlock = ({ event, ppm, maxColumns }: IEventBlockProps) => {
   const top = event.start * ppm;
   const height = (event.end - event.start) * ppm;
 
@@ -29,5 +30,3 @@ function EventBlock({ event, ppm, maxColumns }: EventBlockProps) {
     </div>
   );
 }
-
-export default EventBlock;

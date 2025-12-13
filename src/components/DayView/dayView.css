@@ -1,0 +1,31 @@
+.day-view {
+  display: flex;
+  width: 100%;
+  background: #eee;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.event-area {
+  position: relative;
+  flex: 1;
+  background: #f8f8f8;
+  border-left: 1px solid #ddd;
+}
+
+.hour-line,
+.half-hour-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.hour-line {
+  border-top: 1px solid #ccc;
+}
+
+.half-hour-line {
+  border-top: 1px dashed #ddd;
+}

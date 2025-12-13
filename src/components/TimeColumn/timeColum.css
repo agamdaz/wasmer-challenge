@@ -1,0 +1,13 @@
+.time-column {
+  width: 80px;
+  padding-right: 10px;
+  font-size: 13px;
+  text-align: right;
+  color: #444;
+}
+
+.time-slot {
+  height: 120px; /* 60 min × 2px */
+  display: flex;
+  align-items: flex-start;
+}
