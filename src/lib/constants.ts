@@ -1,9 +1,5 @@
 import type { IEvent } from '@lib/types';
 
-export const DAY_MINUTES = 12 * 60; // 9:00 → 21:00
-
-export const PIXELS_PER_MINUTE = 2;
-
 export const EVENTS: IEvent[] = [
   {
     title: 'Sample event',
@@ -27,17 +23,19 @@ export const EVENTS: IEvent[] = [
 ];
 
 export const TIMES = [
-  '9:00 AM',
-  '10:00 AM',
-  '11:00 AM',
-  '12:00 PM',
-  '1:00 PM',
-  '2:00 PM',
-  '3:00 PM',
-  '4:00 PM',
-  '5:00 PM',
-  '6:00 PM',
-  '7:00 PM',
-  '8:00 PM',
-  '9:00 PM',
+  '09:00',
+  '10:00',
+  '11:00',
+  '12:00',
+  '13:00',
+  '14:00',
+  '15:00',
+  '16:00',
+  '17:00',
+  '18:00',
+  '19:00',
+  '20:00',
+  '21:00',
 ];
+
+export const DAY_MINUTES = (TIMES.length - 1) * 60;

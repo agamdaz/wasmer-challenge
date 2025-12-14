@@ -33,8 +33,8 @@ describe('registerEvents', () => {
 
     const result = window.layOutDay!([]);
 
-    expect(result).toEqual([]);
-    expect(setEvents).not.toHaveBeenCalled();
+    expect(result).toEqual(undefined);
+    expect(setEvents).toHaveBeenCalledWith([]);
   });
 
   it('filters out events where start >= end', () => {

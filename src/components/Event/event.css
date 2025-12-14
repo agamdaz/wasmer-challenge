@@ -1,19 +1,23 @@
 .event__card {
   position: absolute;
-  background: white;
-  border-left: 4px solid #4267b2;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-  padding: 8px 10px;
-  border-radius: 3px;
-  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  overflow: hidden;
+  background: var(--grey-000);
+  border-left: 4px solid var(--color-primary);
+  box-shadow: 0 1px 3px var(--grey-400);
+  padding: 0.5rem;
+  border-radius: 0.2rem;
 }
 
 .event__title {
-  font-weight: bold;
-  color: #1a3a7a;
+  margin: 0;
+  color: var(--color-primary);
 }
 
-.event__location {
-  font-size: 12px;
-  color: #666;
+.event__description {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--grey-800);
 }

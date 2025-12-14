@@ -5,9 +5,9 @@ export const registerEvents = (
 ) => {
   window.layOutDay = (events: IEvent[]) => {
     if (!Array.isArray(events))
-      throw new TypeError('layOutDay expects an array of events');
-
-    if (events.length === 0) return [];
+      throw new TypeError(
+        'layOutDay expects an array of events like this: [{ title: string, description: strig, start: number, end: number }]',
+      );
 
     const sanitizedEvents = events.filter((e) => e.start < e.end);
     setEvents(sanitizedEvents);

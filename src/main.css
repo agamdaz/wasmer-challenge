@@ -1,0 +1,28 @@
+:root {
+  --grey-000: #ffffff;
+  --grey-100: #f2f2f2;
+  --grey-200: #dbdbdb;
+  --grey-300: #adadad;
+  --grey-400: #969696;
+  --grey-500: #808080;
+  --grey-600: #696969;
+  --grey-700: #525252;
+  --grey-800: #3b3b3b;
+  --grey-900: #0d0d0d;
+
+  --color-primary: #566a9a;
+  --color-secondary: #566a9a;
+  --color-background: var(--grey-100);
+  --color-text: var(--grey-900);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: var(--color-text);
+}

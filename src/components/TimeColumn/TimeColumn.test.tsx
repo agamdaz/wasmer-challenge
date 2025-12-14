@@ -9,6 +9,6 @@ describe('Given an event', () => {
     expect(timeArea).toBeVisible;
 
     const times = within(timeArea).getAllByRole('time');
-    expect(times).toHaveLength(13);
+    expect(times).toHaveLength(25);
   });
 });
