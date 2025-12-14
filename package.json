@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
+    "build:inline": "vite build --config vite.config.inlined.ts",
+    "preview:inline": "vite build --config vite.config.inlined.ts && start ./dist/index.html",
     "lint": "eslint .",
     "format": "prettier --write .",
     "test": "jest",
@@ -16,7 +18,7 @@
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
       "prettier --write",
-      "jest --bail --findRelatedTests"
+      "jest --bail --findRelatedTests --passWithNoTests"
     ]
   },
   "dependencies": {
@@ -48,6 +50,7 @@
     "prettier": "^3.7.4",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
-    "vite": "^7.2.4"
+    "vite": "^7.2.4",
+    "vite-plugin-singlefile": "^2.3.0"
   }
 }
