@@ -1,0 +1,1 @@
+export { distributeColumns } from './distributeColumns';

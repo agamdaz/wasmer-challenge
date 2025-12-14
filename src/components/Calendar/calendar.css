@@ -1,4 +1,4 @@
-.day-view {
+.calendar__container {
   display: flex;
   width: 100%;
   background: #eee;
@@ -8,24 +8,24 @@
   font-family: sans-serif;
 }
 
-.event-area {
+.events__container {
   position: relative;
   flex: 1;
   background: #f8f8f8;
   border-left: 1px solid #ddd;
 }
 
-.hour-line,
-.half-hour-line {
+.hour__line,
+.half-hour__line {
   position: absolute;
   left: 0;
   right: 0;
 }
 
-.hour-line {
+.hour__line {
   border-top: 1px solid #ccc;
 }
 
-.half-hour-line {
+.half-hour__line {
   border-top: 1px dashed #ddd;
 }

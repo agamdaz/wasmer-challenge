@@ -1,1 +1,1 @@
-export { TimeColumn } from './TimeColumn'
+export { TimeColumn } from './TimeColumn';

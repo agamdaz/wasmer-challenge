@@ -1,4 +1,4 @@
-import { DayView } from "@components/DayView";
-import { EVENTS } from "@lib/constants";
+import { Calendar } from '@components/Calendar';
+import { EVENTS } from '@lib/constants';
 
-export const App = () => <DayView events={EVENTS} />;
+export const App = () => <Calendar events={EVENTS} />;

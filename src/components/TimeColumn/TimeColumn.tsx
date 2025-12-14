@@ -1,13 +1,12 @@
 import { TIMES } from '@lib/constants';
-import './timeColum.css';
+import './timeColumn.css';
 
 export const TimeColumn = () => (
-  <div className="time-column">
-    {TIMES.map((t, i) => (
-      <div key={i} className="time-slot">
+  <aside className="time-column">
+    {TIMES.map((t) => (
+      <time key={t} dateTime={t} className="time-slot">
         {t}
-      </div>
+      </time>
     ))}
-  </div>
+  </aside>
 );
-
