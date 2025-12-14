@@ -4,23 +4,20 @@ describe('Given a list of events', () => {
   it('When events overlap and are not ordered in time', () => {
     const testEvents = [
       {
-        id: 2,
-        title: 'Sample Item',
-        location: 'Sample Location',
+        title: 'Test event 1',
+        description: 'Sample event description',
         start: 60,
         end: 180,
       },
       {
-        id: 1,
-        title: 'Sample Item',
-        location: 'Sample Location',
+        title: 'Test event 2',
+        description: 'Sample event description',
         start: 30,
         end: 150,
       },
       {
-        id: 3,
-        title: 'Sample Item',
-        location: 'Sample Location',
+        title: 'Test event 3',
+        description: 'Sample event description',
         start: 200,
         end: 300,
       },
@@ -28,9 +25,9 @@ describe('Given a list of events', () => {
 
     const { columns, events } = distributeColumns(testEvents);
 
-    expect(events[0]).toBe(testEvents[1]);
-    expect(events[1]).toBe(testEvents[0]);
-    expect(events[2]).toBe(testEvents[2]);
+    expect(events[0]).toStrictEqual({ ...testEvents[1], column: 0, id: '001' });
+    expect(events[1]).toStrictEqual({ ...testEvents[0], column: 1, id: '002' });
+    expect(events[2]).toStrictEqual({ ...testEvents[2], column: 0, id: '003' });
 
     expect(columns).toBe(2);
   });
@@ -39,15 +36,15 @@ describe('Given a list of events', () => {
     const testEvents = [
       {
         id: 1,
-        title: 'Sample Item',
-        location: 'Sample Location',
+        title: 'Test event 1',
+        description: 'Sample event description',
         start: 0,
         end: 100,
       },
       {
         id: 2,
-        title: 'Sample Item',
-        location: 'Sample Location',
+        title: 'Test event 2',
+        description: 'Sample event description',
         start: 100,
         end: 200,
       },

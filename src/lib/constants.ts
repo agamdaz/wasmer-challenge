@@ -6,23 +6,21 @@ export const PIXELS_PER_MINUTE = 2;
 
 export const EVENTS: IEvent[] = [
   {
-    id: 1,
-    title: 'Sample Item',
-    location: 'Sample Location',
+    title: 'Sample event',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     start: 30,
     end: 90,
   },
   {
-    id: 2,
-    title: 'Sample Item',
-    location: 'Sample Location',
+    title: 'Sample event',
+    description: 'Aliquam ullamcorper erat at arcu facilisis finibus.',
     start: 540,
     end: 630,
   },
   {
-    id: 3,
-    title: 'Sample Item',
-    location: 'Sample Location',
+    title: 'Sample event',
+    description:
+      'Morbi sagittis, nunc id mattis tempor, nisl ante bibendum est, ac tempor metus felis vel eros.',
     start: 600,
     end: 720,
   },

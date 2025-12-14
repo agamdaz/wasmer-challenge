@@ -1,32 +1,31 @@
-import type { IEvent } from '@lib/types';
+import type { ICardEvent } from '@lib/types';
 import { PIXELS_PER_MINUTE } from '@lib/constants';
 import './event.css';
 
 interface IEventCard {
   columns: number;
-  event: IEvent;
+  event: ICardEvent;
 }
 
 export const EventCard = ({ columns, event }: IEventCard) => {
-  const top = event.start * PIXELS_PER_MINUTE;
-  const height = (event.end - event.start) * PIXELS_PER_MINUTE;
-
-  const colIndex = event._colIndex ?? 0;
-  const width = 100 / columns;
-  const left = width * colIndex;
+  const COLUMN = event.column ?? 0;
+  const CARD_WIDTH = 100 / columns;
+  const POSITION_LEFT = CARD_WIDTH * COLUMN;
+  const POSITION_TOP = event.start * PIXELS_PER_MINUTE;
+  const POSITION_BOTTOM = (event.end - event.start) * PIXELS_PER_MINUTE;
 
   return (
     <article
       className="event__card"
       style={{
-        top,
-        height,
-        width: `calc(${width}% - 6px)`,
-        left: `calc(${left}% + 3px)`,
+        top: POSITION_TOP,
+        height: POSITION_BOTTOM,
+        width: `calc(${CARD_WIDTH}% - 6px)`,
+        left: `calc(${POSITION_LEFT}% + 3px)`,
       }}
     >
       <h2 className="event__title">{event.title}</h2>
-      <p className="event__location">{event.location}</p>
+      <p className="event__location">{event.description}</p>
     </article>
   );
 };

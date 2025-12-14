@@ -1,17 +1,21 @@
-import type { IEvent } from '@lib/types';
+import type { ICardEvent, IEvent } from '@lib/types';
 
 export const distributeColumns = (events: IEvent[]) => {
+  const parsedEvents: ICardEvent[] = [];
+
   const eventsSorted = [...events].sort((a, b) => a.start - b.start);
 
-  eventsSorted.forEach((event, i) => {
+  eventsSorted.forEach((event, idx) => {
+    const id = String(idx + 1).padStart(3, '0');
+
     let col = 0;
 
     while (true) {
-      const conflict = eventsSorted
-        .slice(0, i)
+      const conflict = parsedEvents
+        .slice(0, idx)
         .some(
           (prev) =>
-            prev._colIndex === col &&
+            prev.column === col &&
             prev.end > event.start &&
             event.end > prev.start,
         );
@@ -19,10 +23,10 @@ export const distributeColumns = (events: IEvent[]) => {
       col++;
     }
 
-    event._colIndex = col;
+    parsedEvents.push({ ...event, id, column: col });
   });
 
-  const columns = Math.max(...eventsSorted.map((e) => e._colIndex ?? 0)) + 1;
+  const columns = Math.max(...parsedEvents.map((e) => e.column ?? 0)) + 1;
 
-  return { events: eventsSorted, columns };
+  return { events: parsedEvents, columns };
 };

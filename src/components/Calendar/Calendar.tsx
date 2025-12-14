@@ -1,15 +1,21 @@
+import { useEffect, useState } from 'react';
 import { TimeColumn } from '@components/TimeColumn';
 import { EventCard } from '@components/Event';
-import { DAY_MINUTES, PIXELS_PER_MINUTE } from '@lib/constants';
+import { DAY_MINUTES, EVENTS, PIXELS_PER_MINUTE } from '@lib/constants';
 import type { IEvent } from '@lib/types';
-import { distributeColumns } from '@lib/utils/distributeColumns';
+import { distributeColumns, registerEvents } from '@lib/utils';
 import './calendar.css';
 
-interface ICalendar {
-  events: IEvent[];
-}
+export const Calendar = () => {
+  const [events, setEvents] = useState<IEvent[]>(EVENTS);
 
-export const Calendar = ({ events }: ICalendar) => {
+  useEffect(() => {
+    registerEvents(setEvents);
+    return () => {
+      delete window.layOutDay;
+    };
+  }, []);
+
   const { events: processedEvents, columns } = distributeColumns(events);
 
   return (
